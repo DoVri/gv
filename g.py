@@ -10,21 +10,24 @@ import time
 from sys import stdout
 
 useragents = [
-    'Mozilla/5.0 (Android; Linux armv7l; rv:10.0.1) Gecko/20100101 Firefox/10.0.1 Fennec/10.0.1', 
-    'Mozilla/5.0 (Android; Linux armv7l; rv:2.0.1) Gecko/20100101 Firefox/4.0.1 Fennec/2.0.1', 
+    'Mozilla/5.0 (Android; Linux armv7l; rv:10.0.1) Gecko/20100101 Firefox/10.0.1 Fennec/10.0.1',
+    'Mozilla/5.0 (Android; Linux armv7l; rv:2.0.1) Gecko/20100101 Firefox/4.0.1 Fennec/2.0.1',
     'Mozilla/5.0 (WindowsCE 6.0; rv:2.0.1) Gecko/20100101 Firefox/4.0.1',
+    # ...
 ]
 
 socks5 = [
     '221.211.62.6:1111',
     '8.210.48.101:18193',
     '120.79.53.184:1080',
+    # ...
 ]
 
 https = [
     'http://search.aol.com/aol/search?q=',
     'https://www.om.nl/vaste-onderdelen/zoeken/?zoeken_term=',
     'https://www.facebook.com/l.php?u=https://www.facebook.com/l.php?u=',
+    # ...
 ]
 
 def spoofer():
