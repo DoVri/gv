@@ -232,6 +232,8 @@ if method == "TCP":
                     sock.send(grtools)
                     sock.send(grtools)
                     sock.send(grtools)
+	   except:
+               pass
                 
     threads = []
     for _ in range(th):
