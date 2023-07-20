@@ -164,7 +164,7 @@ method = input("╔══\n╚══════>Server@GrTools~~ Enter Methods 
 
 if method == "TCP":
 
-    def tcpfl():
+def tcpfl():
     get_host = "GET HTTP/1.1\r\nHost: " + ip + "\r\n"
     post_host = "POST /Attacked-by-GrTools HTTP/1.1\r\nHost: " + ip + "\r\n"
     get_data = "GET https://check-host.net//1.1\r\nHost: " + ip + "\r\n"
