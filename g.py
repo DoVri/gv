@@ -240,8 +240,8 @@ if method == "TCP":
             threads.append(t)
             print("[GrBroadcast] Attacked")
             t.start()
-            t2 = threading.Thread(target=tcpfl)
-            t2.join()
+        t2 = threading.Thread(target=tcpfl)
+        t2.join()
 
-    for thread in threads:
-        thread.join()
+   for thread in threads:
+       thread.join()
